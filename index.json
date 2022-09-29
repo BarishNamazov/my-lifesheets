@@ -1,0 +1,17 @@
+{
+	"sleepy": {
+		"name": "Sleepy",
+		"slug": "sleepy",
+		"entry_name": "sleep",
+		"entries_name": "sleeps",
+		"description": "sleep tracker",
+		"private": true,
+		"icon": "😴",
+		"color": "#40073e",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": "",
+		"chart_placement": ""
+	}
+}
