@@ -54,7 +54,7 @@
 				"prefix": "number of words wrote: ",
 				"appearance": "stretch",
 				"max": 100000000,
-				"default": "",
+				"default": "[10]",
 				"suffix": "words",
 				"number_style": "number",
 				"number_edit": "spinner"
@@ -96,5 +96,14 @@
 			}
 		}
 	],
-	"charts": []
+	"charts": [
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"aggregate": "average",
+				"aggregate_of": "number_of_words"
+			}
+		}
+	]
 }
