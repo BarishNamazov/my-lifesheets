@@ -102,7 +102,8 @@
 			"scope": "charts",
 			"settings": {
 				"aggregate": "average",
-				"aggregate_of": "number_of_words"
+				"aggregate_of": "number_of_words",
+				"type": "table"
 			}
 		}
 	]
