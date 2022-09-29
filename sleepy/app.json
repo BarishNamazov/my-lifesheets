@@ -14,8 +14,8 @@
 		"charts_placement": ""
 	},
 	"temporal": {
-		"times": "",
-		"ranges": ""
+		"times": "yes",
+		"ranges": "yes"
 	},
 	"entry": [
 		{
@@ -49,44 +49,97 @@
 		{
 			"type": "property",
 			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
 			"settings": {
+				"prefix": " at ",
 				"type": "time",
-				"prefix": "fell asleep at ",
 				"default": "[time($startup, 'hours')]",
-				"appearance": "stretch"
+				"format": "[time(time, 'minutes')]"
 			},
-			"name": "fell_asleep"
-		},
-		{
-			"type": "property",
-			"scope": "entry",
-			"settings": {
-				"prefix": "woke up at ",
-				"type": "time",
-				"default": "[time(fell_asleep+1000*60*60*8, 'hours')]",
-				"appearance": "stretch"
-			},
-			"name": "woke_up"
+			"name": "time"
 		},
 		{
 			"type": "expression",
 			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
 			"settings": {
-				"expression": "if(woke_up > fell_asleep, duration(woke_up-fell_asleep), 'HMMM')",
-				"prefix": "sleep duration ",
-				"appearance": ""
+				"visible": "false",
+				"expression": "datetime(date, time)"
 			},
-			"name": "sleep_duration"
+			"name": "date_time"
 		},
 		{
 			"type": "property",
 			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
 			"settings": {
-				"type": "text",
-				"appearance": "line",
-				"multiline": true
+				"prefix": " to ",
+				"type": "time",
+				"default": "[$previous.end_time + 1 * hours()]",
+				"visible": "true",
+				"format": "[time(time, 'minutes')]"
 			},
-			"name": "notes"
+			"name": "end_time"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"type": "date",
+				"prefix": " on ",
+				"visible": "[if(time and end_time, if(end_date = date, 'edit', true), false)]",
+				"default": "[if(end_time, if(end_time < time, date(date + 1 * days()), date))]",
+				"min_date": "[date]"
+			},
+			"name": "end_date"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"visible": "false",
+				"expression": "datetime(end_date, end_time)"
+			},
+			"name": "end_date_time"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"visible": "false",
+				"expression": "end_date_time - date_time"
+			},
+			"name": "duration"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal",
+				"deletable"
+			],
+			"settings": {
+				"visible": "[end_date and (time and end_time)]",
+				"prefix": "(",
+				"suffix": ")",
+				"expression": "duration(duration, 2)"
+			},
+			"name": "duration_readable"
 		}
 	],
 	"root": [
