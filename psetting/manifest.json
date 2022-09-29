@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "PSetting",
+	"short_name": "PSetting",
+	"start_url": "https://barishnamazov.lifesheets.app/psetting",
+	"display": "standalone",
+	"background_color": "#025024",
+	"description": "pset time tracker",
+	"icons": [
+		{
+			"src": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text style=\"font-size: 80px\" x=\"50%\" y=\".85em\" dominant-baseline=\"middle\" text-anchor=\"middle\">🤯️</text></svg>",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}
