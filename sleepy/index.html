@@ -43,7 +43,7 @@
 					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="appearance-stretch bold type-date"></time>
 					<time property="time" data-type="property" data-prefix=" at " mv-default="[time($startup, 'hours')]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
 					<span property="date_time" data-type="expression" data-show="false" mv-value="datetime(date, time)"></span>
-					<time property="end_time" data-type="property" data-prefix=" to " mv-default="[$previous.end_time + 1 * hours()]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
+					<time property="end_time" data-type="property" data-prefix=" to " mv-default="[time(date_time + 8 * hours())]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
 					<time property="end_date" data-type="property" data-prefix=" on " data-show="[process_visible(if(time and end_time, if(end_date = date, 'edit', true), false))]" mv-default="[if(end_time, if(end_time < time, date(date + 1 * days()), date))]" mv-edit-type="inline" mv-editor-type="date" mv-editor-min="[date]" class="type-date"></time>
 					<span property="end_date_time" data-type="expression" data-show="false" mv-value="datetime(end_date, end_time)"></span>
 					<span property="duration" data-type="expression" data-show="false" mv-value="end_date_time - date_time"></span>
