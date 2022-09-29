@@ -1,0 +1,76 @@
+{
+	"app": {
+		"name": "Wordie",
+		"slug": "wordie",
+		"entry_name": "word",
+		"entries_name": "words",
+		"description": "number of words tracker",
+		"private": false,
+		"icon": "🗒️",
+		"color": "#106070",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": "",
+		"chart_placement": ""
+	},
+	"temporal": {
+		"times": "",
+		"ranges": ""
+	},
+	"entry": [
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal",
+				"deletable"
+			],
+			"settings": {
+				"expression": "weekday(date, 'shortname')"
+			},
+			"name": "weekday"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"type": "date",
+				"default": "[$today]",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "date"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "text",
+				"appearance": "line",
+				"multiline": true
+			},
+			"name": "notes"
+		}
+	],
+	"root": [
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"visible": "edit",
+				"label": "➕ Add word",
+				"target": "add(entry)",
+				"target_preset": "new",
+				"appearance": "",
+				"set_pairs": [],
+				"filter_pairs": []
+			}
+		}
+	],
+	"charts": []
+}
