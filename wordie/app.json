@@ -27,7 +27,7 @@
 				"deletable"
 			],
 			"settings": {
-				"expression": "weekday(date, 'shortname')"
+				"expression": "weekday(date, 'name')"
 			},
 			"name": "weekday"
 		},
@@ -42,9 +42,33 @@
 				"default": "[$today]",
 				"formatting": [
 					"b"
-				]
+				],
+				"appearance": "stretch"
 			},
 			"name": "date"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"prefix": "number of words wrote: ",
+				"appearance": "stretch",
+				"max": 100000000,
+				"default": "",
+				"suffix": "words",
+				"number_style": "number",
+				"number_edit": "spinner"
+			},
+			"name": "number_of_words"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"settings": {
+				"expression": "number_of_words / 15",
+				"prefix": "estimated number of sentences: "
+			},
+			"name": "number_of_sentences"
 		},
 		{
 			"type": "property",
