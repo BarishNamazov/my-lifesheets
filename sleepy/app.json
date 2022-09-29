@@ -157,5 +157,19 @@
 			}
 		}
 	],
-	"charts": []
+	"charts": [
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "line",
+				"group_by": "day",
+				"aggregate": "average",
+				"aggregate_of": "duration",
+				"caption": "Duration of sleep per day",
+				"number_format": "hours($result)",
+				"smooth": false
+			}
+		}
+	]
 }
