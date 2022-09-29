@@ -39,8 +39,10 @@
 		<section mv-list="entry">
 			<article mv-list-item class="entry">
 				<header class="field-row">
-					<span property="weekday" data-type="expression" mv-value="weekday(date, 'shortname')"></span>
-					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
+					<span property="weekday" data-type="expression" mv-value="weekday(date, 'name')"></span>
+					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="appearance-stretch bold type-date"></time>
+					<span property="number_of_words" data-type="property" data-prefix="number of words wrote: " data-suffix="words" mv-editor-type="number" mv-editor-min="1" mv-editor-max="100000000" mv-editor-step="1" class="appearance-stretch type-number"></span>
+					<span property="number_of_sentences" data-type="expression" data-prefix="estimated number of sentences: " mv-value="number_of_words / 15"></span>
 				</header>
 				<div property="notes" data-type="property" class="appearance-line type-text"></div>
 			</article>
