@@ -12,5 +12,20 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"wordie": {
+		"name": "Wordie",
+		"slug": "wordie",
+		"entry_name": "word",
+		"entries_name": "words",
+		"description": "number of words tracker",
+		"private": false,
+		"icon": "🗒️",
+		"color": "#106070",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": "",
+		"chart_placement": ""
 	}
 }
