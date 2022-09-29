@@ -26,12 +26,42 @@
 			<span class="app-name">Sleepy</span>
 		</h1>
 		<h2>sleep tracker</h2>
-		<div class="mv-bar mv-ui"></div>
+		<div class="mv-bar mv-ui"><a href="#entries" class="mv-button custom entries">Entries</a></div>
 	</header>
 
 	<main class="charts-first">
 		<a id=stats></a>
-			
+			<div class="chart-row">
+				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart12" type="line" x="a">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Day</th>
+					<th hc-name="b">Average duration</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart12" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[average($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart><script>chart12.yFormat = $result => {
+						try {
+							let $fn = Mavo.Script.$fn;
+							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
+							return ($fn.hours($result));
+						}
+						catch (e) {
+							console.warn(e);
+							return $result;
+						}
+					};</script>
+	<figcaption>Duration of sleep per day</figcaption></figure>
+			</div>
 		<a id=entries></a>
 			<div class="field-row">
 				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add sleep</button>
