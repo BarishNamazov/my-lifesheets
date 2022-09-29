@@ -81,7 +81,7 @@
 			"settings": {
 				"prefix": " to ",
 				"type": "time",
-				"default": "[$previous.end_time + 1 * hours()]",
+				"default": "[time(date_time + 8 * hours())]",
 				"visible": "true",
 				"format": "[time(time, 'minutes')]"
 			},
