@@ -6,7 +6,7 @@
 		"entries_name": "sleeps",
 		"description": "sleep tracker",
 		"private": false,
-		"icon": "😴",
+		"icon": "💤",
 		"color": "#520e71",
 		"storage_type": "",
 		"storage": "",
