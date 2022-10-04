@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<title>Sleepy: sleep tracker</title>
-	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">😴</text></svg>'>
+	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">💤</text></svg>'>
 	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
 	<link rel="stylesheet" href="../style.css">
 	<style>
 		:root {
 			--accent-color: #520e71;
-			--icon: "😴";
+			--icon: "💤";
 		}
 		
 	</style>
@@ -22,7 +22,7 @@
 <body mv-app="lifesheet" class="mv-autoedit" mv-storage="https://github.com/BarishNamazov/my-lifesheets/sleepy/data.json">
 	<header>
 		<h1>
-			<span class="app-icon">😴</span>
+			<span class="app-icon">💤</span>
 			<span class="app-name">Sleepy</span>
 		</h1>
 		<h2>sleep tracker</h2>
@@ -34,7 +34,7 @@
 			<div class="chart-row">
 				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart12" type="line" x="a">
+	<h-chart id="chart11" type="line" x="a">
 		<table>
 			<thead>
 				<tr>
@@ -42,14 +42,14 @@
 					<th hc-name="b">Average duration</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart12" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
+			<tbody mv-list="chart11" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[average($items)]</td>
 				</tr>
 			</tbody>
 		</table>
-	</h-chart><script>chart12.yFormat = $result => {
+	</h-chart><script>chart11.yFormat = $result => {
 						try {
 							let $fn = Mavo.Script.$fn;
 							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
@@ -78,6 +78,7 @@
 					<span property="end_date_time" data-type="expression" data-show="false" mv-value="datetime(end_date, end_time)"></span>
 					<span property="duration" data-type="expression" data-show="false" mv-value="end_date_time - date_time"></span>
 					<span property="duration_readable" data-type="expression" data-prefix="(" data-suffix=")" data-show="[process_visible(end_date and (time and end_time))]" mv-value="duration(duration, 2)"></span>
+					<span property="field2" data-type="property" class="type-toggle mv-toggle">✅</span>
 				</header>
 			</article>
 		</section>
