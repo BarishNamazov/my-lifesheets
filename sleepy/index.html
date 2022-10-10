@@ -53,7 +53,7 @@
 						try {
 							let $fn = Mavo.Script.$fn;
 							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
-							return ($fn.duration.call($this, $result, "hour"));
+							return ($fn.duration.call($this, $result, 2));
 						}
 						catch (e) {
 							console.warn(e);
@@ -61,8 +61,7 @@
 						}
 					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
-			</div>
-			<figure data-type="chart" class="chart appearance-line type-bar" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
 	
 	<h-chart id="chart13" type="bar" x="a">
 		<table>
@@ -91,6 +90,7 @@
 						}
 					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
+			</div>
 		<a id=entries></a>
 			<div class="field-row">
 				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add sleep</button>
