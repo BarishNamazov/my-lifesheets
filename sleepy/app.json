@@ -178,6 +178,19 @@
 				"number_format": "hours($result)",
 				"smooth": false
 			}
+		},
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "bar",
+				"caption": "Duration of sleep per day",
+				"aggregate": "average",
+				"aggregate_of": "duration",
+				"group_by": "day",
+				"orientation": "horizontal",
+				"number_format": "duration($result, 'hour')"
+			}
 		}
 	]
 }
