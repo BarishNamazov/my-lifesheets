@@ -41,7 +41,7 @@
 					<th hc-name="b">Average number_of_words</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart8" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
+			<tbody mv-list="chart7" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[average($items)]</td>
@@ -49,6 +49,25 @@
 			</tbody>
 		</table>
 	<figcaption>Average number_of_words per month</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart9" type="bar" x="a">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Month</th>
+					<th hc-name="b">Sum of number_of_words</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart9" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[sum($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart>
+	<figcaption>Number of words per month</figcaption></figure>
 			</div>
 		<a id=entries></a>
 			<div class="field-row">
