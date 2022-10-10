@@ -67,11 +67,11 @@
 		<table>
 			<thead>
 				<tr>
-					<th hc-name="a">Day</th>
+					<th hc-name="a">Week</th>
 					<th hc-name="b">Sum of duration</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart13" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
+			<tbody mv-list="chart13" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'week'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[sum($items)]</td>
@@ -82,7 +82,7 @@
 						try {
 							let $fn = Mavo.Script.$fn;
 							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
-							return ($fn.duration.call($this, $result, 2));
+							return ($fn.round($fn.divide($result, 3600000), 2));
 						}
 						catch (e) {
 							console.warn(e);
