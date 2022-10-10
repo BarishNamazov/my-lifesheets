@@ -1,0 +1,16 @@
+{
+	"$schema": "https://json.schemastore.org/web-manifest-combined.json",
+	"name": "New Sleepy",
+	"short_name": "New Sleepy",
+	"start_url": "https://barishnamazov.lifesheets.app/new-sleepy",
+	"display": "standalone",
+	"background_color": "#225e08",
+	"description": "sleep duration tracker",
+	"icons": [
+		{
+			"src": "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text style=\"font-size: 80px\" x=\"50%\" y=\".85em\" dominant-baseline=\"middle\" text-anchor=\"middle\">🐵</text></svg>",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}
