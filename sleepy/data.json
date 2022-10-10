@@ -4,19 +4,22 @@
 			"date": "2022-09-29",
 			"time": "14:00",
 			"end_time": "22:00",
-			"end_date": "2022-09-29"
+			"end_date": "2022-09-29",
+			"field2": false
 		},
 		{
 			"date": "2022-09-28",
 			"time": "14:00",
-			"end_time": "22:00",
-			"end_date": "2022-09-28"
+			"end_time": "21:00",
+			"end_date": "2022-09-28",
+			"field2": false
 		},
 		{
 			"date": "2022-09-27",
 			"time": "14:00",
 			"end_time": "22:00",
-			"end_date": "2022-09-27"
+			"end_date": "2022-09-27",
+			"field2": false
 		}
 	]
 }
