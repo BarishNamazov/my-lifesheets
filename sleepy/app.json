@@ -189,7 +189,8 @@
 				"aggregate_of": "duration",
 				"group_by": "day",
 				"orientation": "horizontal",
-				"number_format": "duration($result, \"hours\")"
+				"number_format": "duration($result, 2)",
+				"appearance": "line"
 			}
 		}
 	]
