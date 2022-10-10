@@ -78,7 +78,17 @@
 				</tr>
 			</tbody>
 		</table>
-	</h-chart>
+	</h-chart><script>chart13.yFormat = $result => {
+						try {
+							let $fn = Mavo.Script.$fn;
+							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
+							return ($fn.duration.call($this, $result, 'hour'));
+						}
+						catch (e) {
+							console.warn(e);
+							return $result;
+						}
+					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
 			</div>
 		<a id=entries></a>
