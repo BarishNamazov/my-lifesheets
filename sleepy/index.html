@@ -34,7 +34,7 @@
 			<div class="chart-row">
 				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart11" type="line" x="a">
+	<h-chart id="chart12" type="line" x="a">
 		<table>
 			<thead>
 				<tr>
@@ -42,18 +42,47 @@
 					<th hc-name="b">Average duration</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart11" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
+			<tbody mv-list="chart12" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[average($items)]</td>
 				</tr>
 			</tbody>
 		</table>
-	</h-chart><script>chart11.yFormat = $result => {
+	</h-chart><script>chart12.yFormat = $result => {
 						try {
 							let $fn = Mavo.Script.$fn;
 							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
 							return ($fn.hours($result));
+						}
+						catch (e) {
+							console.warn(e);
+							return $result;
+						}
+					};</script>
+	<figcaption>Duration of sleep per day</figcaption></figure>
+				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
+	
+	<h-chart id="chart14" type="bar" x="a">
+		<table>
+			<thead>
+				<tr>
+					<th hc-name="a">Day</th>
+					<th hc-name="b">Average duration</th>
+				</tr>
+			</thead>
+			<tbody mv-list="chart14" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
+				<tr mv-list-item mv-group>
+					<td>[$value]</td>
+					<td>[average($items)]</td>
+				</tr>
+			</tbody>
+		</table>
+	</h-chart><script>chart14.yFormat = $result => {
+						try {
+							let $fn = Mavo.Script.$fn;
+							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
+							return ($fn.duration.call($this, $result, 'hour'));
 						}
 						catch (e) {
 							console.warn(e);
