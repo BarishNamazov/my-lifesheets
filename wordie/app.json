@@ -105,6 +105,17 @@
 				"aggregate_of": "number_of_words",
 				"type": "table"
 			}
+		},
+		{
+			"type": "chart",
+			"scope": "charts",
+			"settings": {
+				"type": "bar",
+				"orientation": "horizontal",
+				"aggregate": "sum",
+				"aggregate_of": "number_of_words",
+				"caption": "Number of words per month"
+			}
 		}
 	]
 }
