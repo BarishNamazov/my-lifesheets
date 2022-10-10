@@ -175,7 +175,7 @@
 				"aggregate": "average",
 				"aggregate_of": "duration",
 				"caption": "Duration of sleep per day",
-				"number_format": "duration($result, \"hour\")",
+				"number_format": "duration($result, 2)",
 				"smooth": false
 			}
 		},
@@ -190,7 +190,7 @@
 				"group_by": "day",
 				"orientation": "horizontal",
 				"number_format": "duration($result, 2)",
-				"appearance": "line"
+				"appearance": "stretch"
 			}
 		}
 	]
