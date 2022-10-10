@@ -41,5 +41,19 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"new-sleepy": {
+		"name": "New Sleepy",
+		"slug": "new-sleepy",
+		"entry_name": "sleep duration",
+		"entries_name": "sleep durations",
+		"description": "sleep duration tracker",
+		"private": false,
+		"icon": "🐵",
+		"color": "#225e08",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
