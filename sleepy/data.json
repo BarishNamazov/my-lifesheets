@@ -27,6 +27,13 @@
 			"end_time": "01:00",
 			"end_date": "2022-09-22",
 			"field2": false
+		},
+		{
+			"date": "2022-10-13",
+			"time": "20:00",
+			"end_time": "01:00",
+			"end_date": "2022-10-14",
+			"field2": false
 		}
 	]
 }
