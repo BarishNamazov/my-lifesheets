@@ -38,21 +38,17 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-<th hc-name="0">Number of number_of_words values</th>
-<th hc-name="1">Average number_of_words</th>
-<th hc-name="2">Min of number_of_words</th>
+<th hc-name="0">Average number_of_words</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart7" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))" mv-group>
-				<tr mv-list-item>
+			<tbody mv-list="chart7" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
+				<tr mv-list-item mv-group>
 					<td>[$value]</td>
-					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items)]">[$result]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[min($items)]">[$result]</td>
+					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items)]">[$result]</td>
 				</tr>
 			</tbody>
 		</table>
-	<figcaption>Number of number_of_words values, average number_of_words, min of number_of_words per month</figcaption></figure>
+	<figcaption>Average number_of_words per month</figcaption></figure>
 			</div>
 		<a id=entries></a>
 			<div class="field-row">
