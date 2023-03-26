@@ -38,21 +38,21 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-<th hc-name="0">Sum of number_of_words</th>
-<th hc-name="1">Sum of number_of_sentences</th>
+<th hc-name="0">Number of number_of_words values</th>
+<th hc-name="1">Average number_of_words</th>
+<th hc-name="2">Min of number_of_words</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart7" mv-value="list(groupBy(entry.number_of_words, readable_datetime(entry.date, 'month')))" mv-group>
-				<span property="expr" hidden>[list(groupBy(entry.number_of_words, readable_datetime(entry.date, 'month')),groupBy(entry.number_of_sentences, readable_datetime(entry.date, 'month')))]</span>
-				<span property="groupCount" hidden>[count(list(groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))))]</span>
-				<tr mv-list-item mv-group>
-					<td>[$value] .. [$index] <div hidden property="rowIndex">[$index]</div></td>
-					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum(nth(expr, 0*groupCount+rowIndex).$items)]">[$result].. [index]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum(nth(expr, 1*groupCount+rowIndex).$items)]">[$result].. [index]</td>
+			<tbody mv-list="chart7" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))" mv-group>
+				<tr mv-list-item>
+					<td>[$value]</td>
+					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
+<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items)]">[$result]</td>
+<td property="$result" datatype="number" mv-attribute="data-value" data-value="[min($items)]">[$result]</td>
 				</tr>
 			</tbody>
 		</table>
-	<figcaption>Sum of number_of_words,sum of number_of_sentences per month</figcaption></figure>
+	<figcaption>Number of number_of_words values, average number_of_words, min of number_of_words per month</figcaption></figure>
 			</div>
 		<a id=entries></a>
 			<div class="field-row">
