@@ -88,11 +88,17 @@
 			"settings": {
 				"visible": "edit",
 				"label": "➕ Add word",
-				"target": "add(entry)",
 				"target_preset": "new",
 				"appearance": "",
-				"set_pairs": [],
-				"filter_pairs": []
+				"actions": [
+					{
+						"type": "add",
+						"target": "add(entry)",
+						"filter_junction": "and",
+						"set_pairs": [],
+						"filter_pairs": []
+					}
+				]
 			}
 		}
 	],
