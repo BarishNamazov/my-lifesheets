@@ -110,7 +110,10 @@
 				"aggregate": "average",
 				"aggregate_of": "number_of_words",
 				"type": "table",
-				"number_format": "$result+1"
+				"number_format": "$result+1",
+				"min_width": 360,
+				"min_width_unit": "px",
+				"min_height": 200
 			}
 		}
 	]
