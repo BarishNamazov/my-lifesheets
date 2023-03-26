@@ -112,17 +112,6 @@
 				"type": "table",
 				"number_format": "$result+1"
 			}
-		},
-		{
-			"type": "chart",
-			"scope": "charts",
-			"settings": {
-				"type": "bar",
-				"orientation": "horizontal",
-				"aggregate": "count",
-				"aggregate_of": "number_of_words",
-				"caption": "Number of words per month"
-			}
 		}
 	]
 }
