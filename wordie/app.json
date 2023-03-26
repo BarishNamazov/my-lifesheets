@@ -109,7 +109,8 @@
 			"settings": {
 				"aggregate": "average",
 				"aggregate_of": "number_of_words",
-				"type": "table"
+				"type": "table",
+				"number_format": "$result+1"
 			}
 		},
 		{
@@ -118,7 +119,7 @@
 			"settings": {
 				"type": "bar",
 				"orientation": "horizontal",
-				"aggregate": "sum",
+				"aggregate": "count",
 				"aggregate_of": "number_of_words",
 				"caption": "Number of words per month"
 			}
