@@ -108,7 +108,7 @@
 			"scope": "charts",
 			"settings": {
 				"aggregate": "average",
-				"aggregate_of": "number_of_words",
+				"aggregate_of": "notes",
 				"type": "table",
 				"number_format": "$result+1",
 				"min_width": 360,
