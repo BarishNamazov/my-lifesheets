@@ -26,7 +26,7 @@
 			<span class="app-name">Wordie</span>
 		</h1>
 		<h2>number of words tracker</h2>
-		<div class="mv-bar mv-ui"><a href="#entries" class="mv-button custom entries">Entries</a></div>
+		<div class="mv-bar mv-ui" mv-bar="with import export"><a href="#entries" class="mv-button custom entries">Entries</a></div>
 	</header>
 
 	<main class="charts-first">
@@ -38,7 +38,7 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-					<th hc-name="b">Average number_of_words</th>
+					<th hc-name='0'>Number of number_of_words values</th>
 				</tr>
 			</thead>
 			<tbody mv-list="chart7" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
@@ -48,18 +48,18 @@
 				</tr>
 			</tbody>
 		</table>
-	<figcaption>Average number_of_words per month</figcaption></figure>
+	<figcaption>Number of number_of_words values per month</figcaption></figure>
 				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart9" type="bar" x="a">
+	<h-chart id="chart8" type="bar" x="a">
 		<table>
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-					<th hc-name="b">Sum of number_of_words</th>
+					<th hc-name='b'>Sum of number_of_words</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart9" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
+			<tbody mv-list="chart8" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[sum($items)]</td>
