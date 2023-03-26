@@ -32,23 +32,23 @@
 	<main class="charts-first">
 		<a id=stats></a>
 			<div class="chart-row">
-				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(360px, 100vw);min-height: min(200px, 100vh)">
 	
 		<table>
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-<th hc-name="0">Sum of number_of_words</th>
+<th hc-name="0">Number of number_of_words values</th>
 				</tr>
 			</thead>
 			<tbody mv-list="chart7" mv-value="groupBy(entry.number_of_words, readable_datetime(entry.date, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
-					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum($items)]">[$result]</td>
+					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
 				</tr>
 			</tbody>
 		</table>
-	<figcaption>Sum of number_of_words per month</figcaption></figure>
+	<figcaption>Number of number_of_words values per month</figcaption></figure>
 			</div>
 		<a id=entries></a>
 			<div class="field-row">
