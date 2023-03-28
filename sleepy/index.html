@@ -67,21 +67,17 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-<th hc-name="0">Sum of duration</th>
-<th hc-name="1">Median of duration</th>
-<th hc-name="2">Max of duration</th>
+
 				</tr>
 			</thead>
-			<tbody mv-list="chart13" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'month'))">
+			<tbody mv-list="chart15" mv-value="groupBy(entry.entry, readable_datetime(entry.date_time, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
-					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum($items)]">[round($result / 3600000, 2)]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[median($items)]">[round($result / 3600000, 2)]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[max($items)]">[round($result / 3600000, 2)]</td>
+					
 				</tr>
 			</tbody>
 		</table>
-	<figcaption>Duration of sleep per day</figcaption></figure>
+	<figcaption> per month</figcaption></figure>
 			</div>
 		<a id=entries></a>
 			<div class="field-row">
