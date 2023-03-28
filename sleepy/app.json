@@ -157,11 +157,17 @@
 			"settings": {
 				"visible": "edit",
 				"label": "➕ Add sleep",
-				"target": "add(entry)",
 				"target_preset": "new",
 				"appearance": "",
-				"set_pairs": [],
-				"filter_pairs": []
+				"actions": [
+					{
+						"type": "add",
+						"target": "add(entry)",
+						"filter_junction": "and",
+						"set_pairs": [],
+						"filter_pairs": []
+					}
+				]
 			}
 		}
 	],
@@ -187,7 +193,7 @@
 				"caption": "Duration of sleep per day",
 				"aggregate": "sum",
 				"aggregate_of": "duration",
-				"group_by": "week",
+				"group_by": "month",
 				"orientation": "horizontal",
 				"number_format": "round($result / 3600000, 2)",
 				"appearance": "stretch"
