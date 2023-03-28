@@ -188,30 +188,7 @@
 		{
 			"type": "chart",
 			"scope": "charts",
-			"settings": {
-				"type": "table",
-				"caption": "Duration of sleep per day",
-				"aggregate": "sum",
-				"aggregate_of": "duration",
-				"group_by": "month",
-				"orientation": "horizontal",
-				"number_format": "round($result / 3600000, 2)",
-				"appearance": "stretch",
-				"aggregates": [
-					{
-						"aggregate": "sum",
-						"number_format": "round($result / 3600000, 2)"
-					},
-					{
-						"aggregate": "median",
-						"number_format": "round($result / 3600000, 2)"
-					},
-					{
-						"aggregate": "max",
-						"number_format": "round($result / 3600000, 2)"
-					}
-				]
-			}
+			"settings": {}
 		}
 	]
 }
