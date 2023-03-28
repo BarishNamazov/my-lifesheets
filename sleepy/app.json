@@ -201,6 +201,22 @@
 					{
 						"aggregate": "sum",
 						"number_format": "round($result / 3600000, 2)"
+					},
+					{
+						"aggregate": "average",
+						"number_format": "round($result / 3600000, 2)"
+					},
+					{
+						"aggregate": "median",
+						"number_format": "round($result / 3600000, 2)"
+					},
+					{
+						"aggregate": "min",
+						"number_format": "round($result / 3600000, 2)"
+					},
+					{
+						"aggregate": "max",
+						"number_format": "round($result / 3600000, 2)"
 					}
 				]
 			}
