@@ -61,34 +61,22 @@
 						}
 					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
-				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart13" type="bar" x="a">
 		<table>
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-<th hc-name="b">Sum of duration</th>
+<th hc-name="0">Sum of duration</th>
 				</tr>
 			</thead>
 			<tbody mv-list="chart13" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
-					<td>[sum($items)]</td>
+					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum($items)]">[round($result / 3600000, 2)]</td>
 				</tr>
 			</tbody>
 		</table>
-	</h-chart><script>chart13.yFormat = $result => {
-						try {
-							let $fn = Mavo.Script.$fn;
-							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
-							return ($fn.round($fn.divide($result, 3600000), 2));
-						}
-						catch (e) {
-							console.warn(e);
-							return $result;
-						}
-					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
 			</div>
 		<a id=entries></a>
