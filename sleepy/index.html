@@ -26,7 +26,7 @@
 			<span class="app-name">Sleepy</span>
 		</h1>
 		<h2>sleep tracker</h2>
-		<div class="mv-bar mv-ui"><a href="#entries" class="mv-button custom entries">Entries</a></div>
+		<div class="mv-bar mv-ui" mv-bar="with import export"><a href="#entries" class="mv-button custom entries">Entries</a></div>
 	</header>
 
 	<main class="charts-first">
@@ -39,7 +39,7 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Day</th>
-					<th hc-name="b">Average duration</th>
+<th hc-name="b">Average duration</th>
 				</tr>
 			</thead>
 			<tbody mv-list="chart12" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
@@ -67,11 +67,11 @@
 		<table>
 			<thead>
 				<tr>
-					<th hc-name="a">Week</th>
-					<th hc-name="b">Sum of duration</th>
+					<th hc-name="a">Month</th>
+<th hc-name="b">Sum of duration</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart13" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'week'))">
+			<tbody mv-list="chart13" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[sum($items)]</td>
