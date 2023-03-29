@@ -55,5 +55,19 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"wow": {
+		"name": "WOW",
+		"slug": "wow",
+		"entry_name": "sleep",
+		"entries_name": "sleeps",
+		"description": "sleep tracker",
+		"private": false,
+		"icon": "𛱠",
+		"color": "#0cc4e9",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
