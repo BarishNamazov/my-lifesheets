@@ -6,3 +6,4 @@
 - [🐵 New Sleepy](new-sleepy): sleep duration tracker
 - [𛱠 WOW](wow): sleep tracker
 - [😀 MyLife](mylife): entry tracker
+- [😀 Private](private): entry tracker
