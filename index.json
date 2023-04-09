@@ -97,5 +97,19 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"buggie": {
+		"name": "Buggie",
+		"slug": "buggie",
+		"entry_name": "bug",
+		"entries_name": "bugs",
+		"description": "bug tracker",
+		"private": true,
+		"icon": "🐛",
+		"color": "#613583",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
