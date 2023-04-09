@@ -7,3 +7,4 @@
 - [𛱠 WOW](wow): sleep tracker
 - [😀 MyLife](mylife): entry tracker
 - [😀 Private](private): entry tracker
+- [🐛 Buggie](buggie): bug tracker
