@@ -106,10 +106,11 @@
 		"description": "bug tracker",
 		"private": true,
 		"icon": "🐛",
-		"color": "#613583",
+		"color": "#755f86",
 		"storage_type": "",
 		"storage": "",
 		"custom_css": "",
-		"charts_placement": ""
+		"charts_placement": "",
+		"chart_placement": ""
 	}
 }
