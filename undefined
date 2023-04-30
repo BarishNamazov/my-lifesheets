@@ -1,63 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<title>Barish mood: mood tracker</title>
-	<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text style="font-size: 80px" x="50%" y=".85em" dominant-baseline="middle" text-anchor="middle">💭</text></svg>'>
-	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
-	<link rel="stylesheet" href="../style.css">
-	<style>
-		:root {
-			--accent-color: #a61dd7;
-			--icon: "💭";
+{
+	"app": {
+		"name": "Barish mood",
+		"slug": "mood",
+		"entry_name": "mood",
+		"entries_name": "moods",
+		"description": "mood tracker",
+		"private": false,
+		"icon": "💭",
+		"color": "#a61dd7",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
+	},
+	"temporal": {
+		"times": "yes",
+		"ranges": ""
+	},
+	"entry": [
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal",
+				"deletable"
+			],
+			"settings": {
+				"expression": "weekday(date, 'shortname')"
+			},
+			"name": "weekday"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"type": "date",
+				"default": "[$today]",
+				"formatting": [
+					"b"
+				]
+			},
+			"name": "date"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"prefix": " at ",
+				"type": "time",
+				"default": "[time($startup, 'hours')]",
+				"format": "[time(time, 'minutes')]"
+			},
+			"name": "time"
+		},
+		{
+			"type": "expression",
+			"scope": "entry",
+			"flags": [
+				"temporal"
+			],
+			"settings": {
+				"visible": "false",
+				"expression": "datetime(date, time)"
+			},
+			"name": "date_time"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "text",
+				"appearance": "line",
+				"multiline": true,
+				"editor_ui": "md"
+			},
+			"name": "notes"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "options",
+				"prefix": "General feeling: ",
+				"options": "Pretty down, Down, Meh, OK, Good, Very good"
+			},
+			"name": "feel"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "options",
+				"options": "Low, OK, High",
+				"prefix": "Energy level: ",
+				"appearance": ""
+			},
+			"name": "energy"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"prefix": "Sleep quality: ",
+				"type": "options",
+				"options": "Bad, Managable, Great"
+			},
+			"name": "sleep"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "options",
+				"prefix": "Stress level: ",
+				"options": "None, Little, Anxious, Crazy"
+			},
+			"name": "stress"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"type": "options",
+				"prefix": "Clarity of mind: ",
+				"options": "Foggy, Meh, Clear"
+			},
+			"name": "clarity"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"prefix": "Distraction level: ",
+				"type": "options",
+				"options": "Absentminded, Managable, OK"
+			},
+			"name": "distraction"
 		}
-		
-	</style>
-	<link rel="manifest" href="manifest.json">
-	<script type="module" src="https://projects.verou.me/h-chart/src/h-chart.js"></script>
-	<script type="module" src="https://nudeui.com/index.js"></script>
-</head>
-<body mv-app="lifesheet" class="mv-autoedit" mv-storage="https://github.com/BarishNamazov/my-lifesheets/mood/data.json">
-	<header>
-		<h1>
-			<span class="app-icon">💭</span>
-			<span class="app-name">Barish mood</span>
-		</h1>
-		<h2>mood tracker</h2>
-		<div class="mv-bar mv-ui" mv-bar="with import export"></div>
-	</header>
-
-	<main class="charts-first">
-		<a id=stats></a>
-			
-		<a id=entries></a>
-			<div class="field-row">
-				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add mood</button>
-			</div>
-		<section mv-list="entry">
-			<article mv-list-item class="entry">
-				<header class="field-row">
-					<span property="weekday" data-type="expression" mv-value="weekday(date, 'shortname')"></span>
-					<time property="date" data-type="property" mv-default="[$today]" mv-edit-type="inline" mv-editor-type="date" class="bold type-date"></time>
-					<time property="time" data-type="property" data-prefix=" at " mv-default="[time($startup, 'hours')]" mv-edit-type="inline" mv-editor-type="time" class="type-time"></time>
-					<span property="date_time" data-type="expression" data-show="false" mv-value="datetime(date, time)"></span>
-				</header>
-				<div property="notes" data-type="property" mv-plugins="markdown" class="appearance-line type-text markdown"></div>
-				<div class="field-row">
-					<span property="field2" data-type="property" data-prefix="Energy level: " mv-options="One, Two, Three" class="type-options"></span>
-				</div>
-			</article>
-		</section>
-	</main>
-
-	<script src="https://get.mavo.io/mavo.js"></script>
-	<script>
-		Mavo.Functions.process_visible = function (value) {
-			value = Mavo.value(value);
-			return ["true", "false", "edit", "read"].includes(value) ? value : Boolean(value);
-		}; 
-	</script>
-</body>
-</html>
+	],
+	"root": [
+		{
+			"type": "action",
+			"scope": "root",
+			"settings": {
+				"visible": "edit",
+				"label": "➕ Add mood",
+				"target_preset": "new",
+				"appearance": "",
+				"actions": [
+					{
+						"type": "add",
+						"target": "add(entry)",
+						"filter_junction": "and",
+						"set_pairs": [],
+						"filter_pairs": []
+					}
+				]
+			}
+		}
+	],
+	"charts": []
+}
