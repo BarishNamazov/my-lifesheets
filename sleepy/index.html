@@ -39,10 +39,10 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Day</th>
-<th hc-name="b">Average duration</th>
+<th hc-name="0">Average duration</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart12" mv-value="groupBy(entry.duration, readable_datetime(entry.date_time, 'day'))">
+			<tbody mv-list="chart12" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'day'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td>[average($items)]</td>
@@ -61,24 +61,26 @@
 						}
 					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
-				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
+			</div>
+			<figure data-type="chart" class="chart appearance-line type-table" style="min-width: min(300px, 100vw)">
 	
 		<table>
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-
+<th hc-name="0">Number of sleeps</th>
+<th hc-name="1">Sum of duration</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart15" mv-value="groupBy(entry.entry, readable_datetime(entry.date_time, 'month'))">
+			<tbody mv-list="chart13" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
-					
+					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
+<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum($items.duration)]">[duration($result, 2)]</td>
 				</tr>
 			</tbody>
 		</table>
-	<figcaption> per month</figcaption></figure>
-			</div>
+	<figcaption>Number of sleeps, sum of duration per month</figcaption></figure>
 		<a id=entries></a>
 			<div class="field-row">
 				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add sleep</button>
