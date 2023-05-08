@@ -32,34 +32,24 @@
 	<main class="charts-first">
 		<a id=stats></a>
 			<div class="chart-row">
-				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart12" type="line" x="a">
 		<table>
 			<thead>
 				<tr>
 					<th hc-name="a">Day</th>
 <th hc-name="0">Average duration</th>
+<th hc-name="1">Number of sleeps</th>
 				</tr>
 			</thead>
 			<tbody mv-list="chart12" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'day'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
-					<td>[average($items)]</td>
+					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items.duration)]">[duration($result, 2)]</td>
+<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[duration($result, 2)]</td>
 				</tr>
 			</tbody>
 		</table>
-	</h-chart><script>chart12.yFormat = $result => {
-						try {
-							let $fn = Mavo.Script.$fn;
-							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
-							return ($fn.duration.call($this, $result, 2));
-						}
-						catch (e) {
-							console.warn(e);
-							return $result;
-						}
-					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
 			</div>
 			<figure data-type="chart" class="chart appearance-line type-table" style="min-width: min(300px, 100vw)">
@@ -69,18 +59,16 @@
 				<tr>
 					<th hc-name="a">Month</th>
 <th hc-name="0">Number of sleeps</th>
-<th hc-name="1">Sum of duration</th>
 				</tr>
 			</thead>
 			<tbody mv-list="chart13" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'month'))">
 				<tr mv-list-item mv-group>
 					<td>[$value]</td>
 					<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[sum($items.duration)]">[duration($result, 2)]</td>
 				</tr>
 			</tbody>
 		</table>
-	<figcaption>Number of sleeps, sum of duration per month</figcaption></figure>
+	<figcaption>Number of sleeps per month</figcaption></figure>
 		<a id=entries></a>
 			<div class="field-row">
 				<button data-type="action" data-show="edit" mv-action="add(entry)">➕ Add sleep</button>
