@@ -191,7 +191,8 @@
 					},
 					{
 						"aggregate": "count",
-						"of": "entry"
+						"of": "entry",
+						"format": "duration($result, 2)"
 					}
 				]
 			}
