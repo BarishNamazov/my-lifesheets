@@ -148,7 +148,7 @@
 				"type": "number",
 				"default": "50"
 			},
-			"name": "field2"
+			"name": "quality"
 		},
 		{
 			"type": "property",
