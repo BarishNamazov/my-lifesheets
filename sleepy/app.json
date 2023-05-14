@@ -145,9 +145,18 @@
 			"type": "property",
 			"scope": "entry",
 			"settings": {
-				"type": "toggle"
+				"type": "number",
+				"default": "50"
 			},
 			"name": "field2"
+		},
+		{
+			"type": "property",
+			"scope": "entry",
+			"settings": {
+				"default": "40"
+			},
+			"name": "relax"
 		}
 	],
 	"root": [
@@ -187,7 +196,8 @@
 				"stats": [
 					{
 						"aggregate": "average",
-						"of": "duration"
+						"of": "duration",
+						"format": "duration($result, 2)"
 					},
 					{
 						"aggregate": "count",
