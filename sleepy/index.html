@@ -32,24 +32,40 @@
 	<main class="charts-first">
 		<a id=stats></a>
 			<div class="chart-row">
-				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-line" style="min-width: min(300px, 100vw)">
 	
+	<h-chart id="chart13" type="line" x="a" y="c">
 		<table mv-list="chart13" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'day'))">
 			<thead>
 				<tr>
 					<th hc-name="a">Day</th>
-<th hc-name="0">Average duration</th>
-<th hc-name="1">Max of duration</th>
+<th hc-name="b">Label</th><th hc-name="c">Value</th>
 				</tr>
 			</thead>
 			<tbody mv-list-item mv-group>
-				<tr mv-list-item mv-group>
-											<td>[$value]</td>
-											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items.duration)]">[duration($result, 2)]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[max($items.duration)]">[duration($result, 2)]</td>
-									 </tr>
+				<tr>
+										<td>[$value]</td>
+										<td>average duration</td>
+										<td>[average($items.duration)]</td>
+									</tr>
+<tr>
+										<td>[$value]</td>
+										<td>max of duration</td>
+										<td>[max($items.duration)]</td>
+									</tr>
 			</tbody>
 		</table>
+	</h-chart><script>chart13.yFormat = $result => {
+						try {
+							let $fn = Mavo.Script.$fn;
+							let $this = Mavo.all[0]?.root.getLiveData() ?? {};
+							return ($fn.duration.call($this, $result, 2));
+						}
+						catch (e) {
+							console.warn(e);
+							return $result;
+						}
+					};</script>
 	<figcaption>Duration of sleep per day</figcaption></figure>
 			</div>
 			<figure data-type="chart" class="chart appearance-line type-table" style="min-width: min(300px, 100vw)">
