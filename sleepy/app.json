@@ -185,7 +185,7 @@
 			"type": "chart",
 			"scope": "charts",
 			"settings": {
-				"type": "table",
+				"type": "bar",
 				"group_by": "day",
 				"caption": "Duration of sleep per day",
 				"number_format": "$result",
@@ -204,7 +204,8 @@
 						"of": "relax",
 						"format": "$result"
 					}
-				]
+				],
+				"orientation": "horizontal"
 			}
 		},
 		{
