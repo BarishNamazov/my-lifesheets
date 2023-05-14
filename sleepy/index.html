@@ -42,7 +42,7 @@
 <th hc-name="1">Number of sleeps</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart12" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'day'))">
+			<tbody mv-list="chart13" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'day'))">
 				<tr mv-list-item mv-group>
 											<td>[$value]</td>
 											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items.duration)]">[duration($result, 2)]</td>
@@ -61,7 +61,7 @@
 <th hc-name="0">Number of sleeps</th>
 				</tr>
 			</thead>
-			<tbody mv-list="chart13" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'month'))">
+			<tbody mv-list="chart14" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'month'))">
 				<tr mv-list-item mv-group>
 											<td>[$value]</td>
 											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
