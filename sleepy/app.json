@@ -185,10 +185,10 @@
 			"type": "chart",
 			"scope": "charts",
 			"settings": {
-				"type": "bar",
+				"type": "table",
 				"group_by": "day",
 				"caption": "Duration of sleep per day",
-				"number_format": "$result",
+				"number_format": "duration($result, 2)",
 				"smooth": false,
 				"aggregate_ofs": [
 					"duration"
@@ -196,13 +196,13 @@
 				"stats": [
 					{
 						"aggregate": "average",
-						"of": "quality",
-						"format": "$result"
+						"of": "duration",
+						"format": null
 					},
 					{
-						"aggregate": "average",
-						"of": "relax",
-						"format": "$result"
+						"aggregate": "max",
+						"of": "duration",
+						"format": null
 					}
 				],
 				"orientation": "horizontal"
