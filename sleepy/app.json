@@ -188,7 +188,7 @@
 				"type": "table",
 				"group_by": "day",
 				"caption": "Duration of sleep per day",
-				"number_format": "duration($result, 2)",
+				"number_format": "$result",
 				"smooth": false,
 				"aggregate_ofs": [
 					"duration"
@@ -196,12 +196,12 @@
 				"stats": [
 					{
 						"aggregate": "average",
-						"of": "duration",
-						"format": "duration($result, 2)"
+						"of": "quality",
+						"format": "$result"
 					},
 					{
-						"aggregate": "count",
-						"of": "entry",
+						"aggregate": "average",
+						"of": "relax",
 						"format": "$result"
 					}
 				]
