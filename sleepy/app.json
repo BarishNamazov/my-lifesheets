@@ -185,7 +185,7 @@
 			"type": "chart",
 			"scope": "charts",
 			"settings": {
-				"type": "table",
+				"type": "line",
 				"group_by": "day",
 				"caption": "Duration of sleep per day",
 				"number_format": "duration($result, 2)",
