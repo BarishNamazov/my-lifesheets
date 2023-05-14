@@ -32,30 +32,24 @@
 	<main class="charts-first">
 		<a id=stats></a>
 			<div class="chart-row">
-				<figure data-type="chart" class="chart appearance-stretch type-bar" style="min-width: min(300px, 100vw)">
+				<figure data-type="chart" class="chart appearance-stretch type-table" style="min-width: min(300px, 100vw)">
 	
-	<h-chart id="chart13" type="bar" x="a" y="c">
 		<table mv-list="chart13" mv-value="groupBy(entry, readable_datetime(entry.date_time, 'day'))">
 			<thead>
 				<tr>
 					<th hc-name="a">Day</th>
-<th hc-name="b">Label</th><th hc-name="c">Value</th>
+<th hc-name="0">Average duration</th>
+<th hc-name="1">Max of duration</th>
 				</tr>
 			</thead>
 			<tbody mv-list-item mv-group>
-				<tr>
-										<td>[$value]</td>
-										<td>average quality</td>
-										<td>[average($items.quality)]</td>
-									</tr>
-<tr>
-										<td>[$value]</td>
-										<td>average relax</td>
-										<td>[average($items.relax)]</td>
-									</tr>
+				<tr mv-list-item mv-group>
+											<td>[$value]</td>
+											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items.duration)]">[duration($result, 2)]</td>
+<td property="$result" datatype="number" mv-attribute="data-value" data-value="[max($items.duration)]">[duration($result, 2)]</td>
+									 </tr>
 			</tbody>
 		</table>
-	</h-chart>
 	<figcaption>Duration of sleep per day</figcaption></figure>
 			</div>
 			<figure data-type="chart" class="chart appearance-line type-table" style="min-width: min(300px, 100vw)">
@@ -64,15 +58,14 @@
 			<thead>
 				<tr>
 					<th hc-name="a">Month</th>
-<th hc-name="b">Label</th><th hc-name="c">Value</th>
+<th hc-name="0">Number of sleeps</th>
 				</tr>
 			</thead>
 			<tbody mv-list-item mv-group>
-				<tr>
-										<td>[$value]</td>
-										<td>number of sleeps</td>
-										<td>[count($items)]</td>
-									</tr>
+				<tr mv-list-item mv-group>
+											<td>[$value]</td>
+											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)]">[$result]</td>
+									 </tr>
 			</tbody>
 		</table>
 	<figcaption>Number of sleeps per month</figcaption></figure>
