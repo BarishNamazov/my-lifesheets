@@ -185,7 +185,7 @@
 			"type": "chart",
 			"scope": "charts",
 			"settings": {
-				"type": "line",
+				"type": "table",
 				"group_by": "day",
 				"caption": "Duration of sleep per day",
 				"number_format": "duration($result, 2)",
@@ -200,8 +200,10 @@
 						"format": null,
 						"filters": [
 							{
-								"test_prop": "weekday",
-								"expression": "weekday"
+								"test_prop": "$index",
+								"expression": "$index < 2",
+								"op": "<",
+								"test_value": "2"
 							}
 						],
 						"filter_junction": "and"
