@@ -197,12 +197,21 @@
 					{
 						"aggregate": "average",
 						"of": "duration",
-						"format": null
+						"format": null,
+						"filters": [
+							{
+								"test_prop": "weekday",
+								"expression": "weekday"
+							}
+						],
+						"filter_junction": "and"
 					},
 					{
 						"aggregate": "max",
 						"of": "duration",
-						"format": null
+						"format": null,
+						"filters": [],
+						"filter_junction": "and"
 					}
 				],
 				"orientation": "horizontal"
