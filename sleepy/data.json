@@ -5,35 +5,45 @@
 			"time": "14:00",
 			"end_time": "22:00",
 			"end_date": "2022-09-29",
-			"field2": false
+			"field2": false,
+			"quality": 50,
+			"relax": 40
 		},
 		{
 			"date": "2022-09-28",
 			"time": "14:00",
 			"end_time": "21:00",
 			"end_date": "2022-09-28",
-			"field2": false
+			"field2": false,
+			"quality": "50",
+			"relax": "40"
 		},
 		{
 			"date": "2022-09-27",
 			"time": "14:00",
 			"end_time": "22:00",
 			"end_date": "2022-09-27",
-			"field2": false
+			"field2": false,
+			"quality": 35,
+			"relax": "40"
 		},
 		{
 			"date": "2022-09-21",
 			"time": "17:00",
 			"end_time": "01:00",
 			"end_date": "2022-09-22",
-			"field2": false
+			"field2": false,
+			"quality": "50",
+			"relax": "40"
 		},
 		{
 			"date": "2022-10-13",
 			"time": "20:00",
 			"end_time": "01:00",
 			"end_date": "2022-10-14",
-			"field2": false
+			"field2": false,
+			"quality": "50",
+			"relax": "40"
 		}
 	]
 }
