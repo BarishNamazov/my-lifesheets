@@ -200,10 +200,10 @@
 						"format": null,
 						"filters": [
 							{
-								"test_prop": "$index",
-								"expression": "$index < 2",
-								"op": "<",
-								"test_value": "2"
+								"test_prop": "quality",
+								"expression": "$items.quality > 40",
+								"op": ">",
+								"test_value": "40"
 							}
 						],
 						"filter_junction": "and"
