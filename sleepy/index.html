@@ -45,8 +45,10 @@
 			<tbody mv-list-item mv-group>
 				<tr mv-list-item mv-group>
 											<td>[$value]</td>
-											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[average($items where $index < 2).duration}]">[duration($result, 2)]</td>
-<td property="$result" datatype="number" mv-attribute="data-value" data-value="[max($items).duration}]">[duration($result, 2)]</td>
+											<td property="$result" datatype="number" mv-attribute="data-value" 
+									data-value="[average(filter($items.duration, $items.quality > 40))]">[duration($result, 2)]</td>
+<td property="$result" datatype="number" mv-attribute="data-value" 
+									data-value="[max($items.duration)]">[duration($result, 2)]</td>
 									 </tr>
 			</tbody>
 		</table>
@@ -64,7 +66,8 @@
 			<tbody mv-list-item mv-group>
 				<tr mv-list-item mv-group>
 											<td>[$value]</td>
-											<td property="$result" datatype="number" mv-attribute="data-value" data-value="[count($items)}]">[$result]</td>
+											<td property="$result" datatype="number" mv-attribute="data-value" 
+									data-value="[count($items)]">[$result]</td>
 									 </tr>
 			</tbody>
 		</table>
