@@ -126,5 +126,19 @@
 		"storage": "",
 		"custom_css": "",
 		"charts_placement": ""
+	},
+	"mygraine": {
+		"name": "mygraine",
+		"slug": "mygraine",
+		"entry_name": "migraine",
+		"entries_name": "migraines",
+		"description": "migraine tracker",
+		"private": false,
+		"icon": "🤕",
+		"color": "#a00808",
+		"storage_type": "",
+		"storage": "",
+		"custom_css": "",
+		"charts_placement": ""
 	}
 }
