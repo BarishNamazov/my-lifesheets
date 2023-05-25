@@ -9,3 +9,4 @@
 - [😀 Private](private): entry tracker
 - [🐛 Buggie](buggie): bug tracker
 - [🐣 iGrow](igrow): child growth tracker
+- [🤕 mygraine](mygraine): migraine tracker
